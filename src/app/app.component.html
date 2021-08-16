@@ -1,0 +1,50 @@
+<div class="toolbar" role="banner">
+    <h2>Bõna</h2>
+    <a aria-label="Home" target="_blank" rel="noopener" href="#" title="Home">
+      Home
+    </a>
+    <a aria-label="Categories" target="_blank" rel="noopener" href="#" title="Categories">
+      Categories
+    </a>
+    <a aria-label="Features" target="_blank" rel="noopener" href="#" title="Features">
+      Features
+    </a>
+    <label>
+      <input type="text" placeholder="Type of search">
+    </label>
+</div>
+
+<img id="cover" src="../assets/assests/banner.jpeg" />
+
+<div class="fiction-books  flex-container">
+  <ng-container *ngFor="let name of data; index as i;">
+        <div class="flex-item widthi" *ngIf="name.type == 1">
+          <img [src]="name.asset" />
+          <img class="profile-pic" [src]="name.prfile" />
+          <p>{{name.text}}</p>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary"><i class="fa fa-heart"></i> {{name.likes}}</button>
+            <button type="button" class="btn btn-primary"><i class="fa fa-comment"></i> {{name.comment}}</button>
+            <button type="button" class="btn btn-primary"><i class="material-icons">visibility</i> {{name.views}}</button>
+          </div>
+        </div>
+        <div class="flex-item widthii" *ngIf="name.type == 2">
+          <img [src]="name.asset" />
+        <div>
+          <h4 style="margin: 5px;">Health</h4>
+          <p style="margin: 25px 0px 0px 5px; text-align: inherit; font-size: 20px;">{{name.text}}</p>
+          <p style="margin: 15px 0px 0px 5px; text-align: justify; font-weight: inherit; font-size: 14px;">{{name.content}}</p>
+          <img class="profile-pic" [src]="name.prfile" />
+          <h4 style="margin-left: 95px; margin-top: 5px;">{{name.name}}</h4>
+          <p style="margin: 0px 0px 0px 95px; text-align: inherit; font-weight: inherit; font-size: 14px;">{{name.date}}</p>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary"><i class="fa fa-heart"></i> {{name.likes}}</button>
+            <button type="button" class="btn btn-primary"><i class="fa fa-comment"></i> {{name.comment}}</button>
+            <button type="button" class="btn btn-primary"><i class="material-icons">visibility</i> {{name.views}}</button>
+          </div>
+        </div>
+        
+        </div>
+  </ng-container>
+</div>
